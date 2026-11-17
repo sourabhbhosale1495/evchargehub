@@ -42,7 +42,7 @@ function EVMap() {
   // =========================
 
   useEffect(() => {
-    fetch("http://localhost:8081/api/stations")
+    fetch("https://evchargehub-backend.onrender.com/api/stations")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch stations");

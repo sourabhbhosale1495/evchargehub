@@ -19,7 +19,7 @@ function AdminPayments() {
       setError("");
 
       const response = await fetch(
-        "http://localhost:8081/api/admin/payments",
+        "https://evchargehub-backend.onrender.com/api/admin/payments",
         {
           credentials: "include"
         }
@@ -68,7 +68,7 @@ function AdminPayments() {
     try {
 
       const response = await fetch(
-        `http://localhost:8081/api/admin/payments/${id}`,
+        `https://evchargehub-backend.onrender.com/api/admin/payments/${id}`,
         {
           method: "DELETE",
           credentials: "include"

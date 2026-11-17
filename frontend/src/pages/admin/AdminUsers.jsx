@@ -29,7 +29,7 @@ function AdminUsers() {
     try {
 
       const response = await fetch(
-        "http://localhost:8081/api/admin/users",
+        "https://evchargehub-backend.onrender.com/api/admin/users",
         {
           credentials: "include"
         }
@@ -74,7 +74,7 @@ function AdminUsers() {
     try {
 
       const response = await fetch(
-        `http://localhost:8081/api/users/${id}`,
+        `https://evchargehub-backend.onrender.com/api/users/${id}`,
         {
           method: "DELETE",
           credentials: "include"
@@ -126,7 +126,7 @@ function AdminUsers() {
     try {
 
       const response = await fetch(
-        `http://localhost:8081/api/users/${user.id}/status?active=${newStatus}`,
+        `https://evchargehub-backend.onrender.com/api/users/${user.id}/status?active=${newStatus}`,
         {
           method: "PUT",
           credentials: "include"
@@ -219,7 +219,7 @@ function AdminUsers() {
     try {
 
       const response = await fetch(
-        `http://localhost:8081/api/users/${editingUser.id}`,
+        `https://evchargehub-backend.onrender.com/api/users/${editingUser.id}`,
         {
           method: "PUT",
           credentials: "include",

@@ -23,7 +23,7 @@ function UserDashboard() {
     setUser(loggedInUser);
 
     fetch(
-      `http://localhost:8081/api/bookings/user/${loggedInUser.id}`,
+      `https://evchargehub-backend.onrender.com/api/bookings/user/${loggedInUser.id}`,
       { credentials: "include" }
     )
       .then((response) => {
@@ -56,7 +56,7 @@ function UserDashboard() {
 
   const handleLogout = () => {
 
-    fetch("http://localhost:8081/api/users/logout", {
+    fetch("https://evchargehub-backend.onrender.com/api/users/logout", {
       method: "POST",
       credentials: "include"
     }).catch((error) => console.error("Logout error:", error));

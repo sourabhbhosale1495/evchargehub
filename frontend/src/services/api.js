@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8081/api";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://evchargehub-backend.onrender.com/api";
 
 async function postUserRequest(endpoint, payload) {
     let response;

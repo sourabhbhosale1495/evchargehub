@@ -21,7 +21,7 @@ function PaymentSuccess() {
       try {
 
         const response = await fetch(
-          `http://localhost:8081/api/bookings/${bookingId}`,
+          `https://evchargehub-backend.onrender.com/api/bookings/${bookingId}`,
           { credentials: "include" }
         );
 

@@ -16,7 +16,7 @@ function BookingConfirmation() {
       try {
 
         const response = await fetch(
-          `http://localhost:8081/api/bookings/${id}`,
+          `https://evchargehub-backend.onrender.com/api/bookings/${id}`,
           { credentials: "include" }
         );
 

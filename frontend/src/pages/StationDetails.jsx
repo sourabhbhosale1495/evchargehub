@@ -50,7 +50,7 @@ function StationDetails() {
         // ------------------------------------------
 
         const response = await fetch(
-          `http://localhost:8081/api/stations/${stationId}`
+          `https://evchargehub-backend.onrender.com/api/stations/${stationId}`
         );
 
 

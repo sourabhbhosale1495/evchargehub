@@ -23,7 +23,7 @@ function Payment() {
       try {
 
         const response = await fetch(
-          `http://localhost:8081/api/bookings/${bookingId}`,
+          `https://evchargehub-backend.onrender.com/api/bookings/${bookingId}`,
           {
             method: "GET",
             credentials: "include",
@@ -125,7 +125,7 @@ function Payment() {
     try {
 
       const response = await fetch(
-        "http://localhost:8081/api/payments",
+        "https://evchargehub-backend.onrender.com/api/payments",
         {
           method: "POST",
            credentials: "include",

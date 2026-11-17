@@ -41,7 +41,7 @@ function EditStation() {
       try {
 
         const response = await fetch(
-          `http://localhost:8081/api/stations/${id}`,
+          `https://evchargehub-backend.onrender.com/api/stations/${id}`,
           { credentials: "include" }
         );
 
@@ -211,7 +211,7 @@ function EditStation() {
       console.log("Updating station:", stationData);
 
       const response = await fetch(
-        `http://localhost:8081/api/stations/${id}`,
+        `https://evchargehub-backend.onrender.com/api/stations/${id}`,
         {
           method: "PUT",
           credentials: "include",

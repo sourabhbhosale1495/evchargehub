@@ -45,7 +45,7 @@ function Booking() {
         }
 
         const response = await fetch(
-          `http://localhost:8081/api/stations/${stationId}`
+          `https://evchargehub-backend.onrender.com/api/stations/${stationId}`
         );
 
         if (!response.ok) {
@@ -144,7 +144,7 @@ const handleBooking = async (e) => {
       console.log("Creating booking:", bookingData);
 
       const response = await fetch(
-        "http://localhost:8081/api/bookings",
+        "https://evchargehub-backend.onrender.com/api/bookings",
         {
           method: "POST",
 

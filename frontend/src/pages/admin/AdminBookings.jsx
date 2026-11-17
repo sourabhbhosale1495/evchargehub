@@ -16,7 +16,7 @@ function AdminBookings() {
     try {
 
       const response = await fetch(
-        "http://localhost:8081/api/admin/bookings",
+        "https://evchargehub-backend.onrender.com/api/admin/bookings",
         {
           credentials: "include"
         }
@@ -63,7 +63,7 @@ function AdminBookings() {
     try {
 
       const response = await fetch(
-        `http://localhost:8081/api/admin/bookings/${id}/cancel`,
+        `https://evchargehub-backend.onrender.com/api/admin/bookings/${id}/cancel`,
         {
           method: "PUT",
           credentials: "include"
@@ -128,7 +128,7 @@ function AdminBookings() {
     try {
 
       const response = await fetch(
-        `http://localhost:8081/api/admin/bookings/${id}`,
+        `https://evchargehub-backend.onrender.com/api/admin/bookings/${id}`,
         {
           method: "DELETE",
           credentials: "include"

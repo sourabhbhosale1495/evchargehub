@@ -15,7 +15,7 @@ function AdminDashboard() {
 
   useEffect(() => {
 
-    fetch("http://localhost:8081/api/admin/dashboard", {
+    fetch("https://evchargehub-backend.onrender.com/api/admin/dashboard", {
       credentials: "include"
     })
       .then((response) => {

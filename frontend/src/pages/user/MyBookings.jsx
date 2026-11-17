@@ -29,7 +29,7 @@ function MyBookings() {
       // =========================
 
       const bookingResponse = await fetch(
-        `http://localhost:8081/api/bookings/user/${user.id}`,
+        `https://evchargehub-backend.onrender.com/api/bookings/user/${user.id}`,
         { credentials: "include" }
       );
 
@@ -44,7 +44,7 @@ function MyBookings() {
       // =========================
 
       const paymentResponse = await fetch(
-        "http://localhost:8081/api/payments",
+        "https://evchargehub-backend.onrender.com/api/payments",
         { credentials: "include" }
       );
 

@@ -25,7 +25,7 @@ function AdminStations() {
       setError("");
 
       const response = await fetch(
-        "http://localhost:8081/api/stations"
+        "https://evchargehub-backend.onrender.com/api/stations"
       );
 
       if (!response.ok) {
@@ -73,7 +73,7 @@ function AdminStations() {
     try {
 
       const response = await fetch(
-        `http://localhost:8081/api/stations/${id}`,
+        `https://evchargehub-backend.onrender.com/api/stations/${id}`,
         {
           method: "DELETE",
           credentials: "include"

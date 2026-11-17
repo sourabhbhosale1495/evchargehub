@@ -65,7 +65,7 @@ function AddStation() {
       console.log("Sending station:", stationData);
 
       const response = await fetch(
-        "http://localhost:8081/api/stations",
+        "https://evchargehub-backend.onrender.com/api/stations",
         {
           method: "POST",
           credentials: "include",
