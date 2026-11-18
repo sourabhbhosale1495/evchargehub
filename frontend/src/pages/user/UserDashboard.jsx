@@ -1,6 +1,22 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+// Realtime greeting based on user's local time
+function getGreeting() {
+  const hour = new Date().getHours();
+
+  if (hour >= 5 && hour < 12) {
+    return { text: "Good morning", emoji: "👋", sub: "Ready to charge your EV and continue your journey?" };
+  }
+  if (hour >= 12 && hour < 17) {
+    return { text: "Good afternoon", emoji: "☀️", sub: "Hope your day is going well. Ready for your next charge?" };
+  }
+  if (hour >= 17 && hour < 21) {
+    return { text: "Good evening", emoji: "🌇", sub: "Winding down? Make sure your EV is ready for tomorrow." };
+  }
+  return { text: "Good night", emoji: "🌙", sub: "Late night charge? We've got you covered." };
+}
+
 function UserDashboard() {
 
   const navigate = useNavigate();
@@ -53,7 +69,6 @@ function UserDashboard() {
 
   }, [navigate]);
 
-
   const handleLogout = () => {
 
     fetch("https://evchargehub-backend.onrender.com/api/users/logout", {
@@ -67,11 +82,9 @@ function UserDashboard() {
 
   };
 
-
   if (!user) {
     return null;
   }
-
 
   // Calculate total amount spent
   const totalSpent = bookings.reduce(
@@ -80,12 +93,13 @@ function UserDashboard() {
     0
   );
 
-
   // Upcoming confirmed bookings
   const upcomingBookings = bookings.filter(
     (booking) => booking.status === "CONFIRMED"
   );
 
+  // Realtime greeting
+  const greeting = getGreeting();
 
   return (
 
@@ -105,7 +119,6 @@ function UserDashboard() {
 
         </div>
 
-
         <div className="dashboard-nav-links">
 
           <Link to="/dashboard" className="active">
@@ -121,7 +134,6 @@ function UserDashboard() {
           </Link>
 
         </div>
-
 
         <div className="dashboard-user">
 
@@ -149,11 +161,9 @@ function UserDashboard() {
 
       </nav>
 
-
       {/* ================= CONTENT ================= */}
 
       <div className="dashboard-container">
-
 
         {/* WELCOME */}
 
@@ -166,15 +176,14 @@ function UserDashboard() {
             </span>
 
             <h1>
-              Good morning, {user.name} 👋
+              {greeting.text}, {user.name} {greeting.emoji}
             </h1>
 
             <p>
-              Ready to charge your EV and continue your journey?
+              {greeting.sub}
             </p>
 
           </div>
-
 
           <Link
             to="/stations"
@@ -188,7 +197,6 @@ function UserDashboard() {
           </Link>
 
         </section>
-
 
         {/* ================= STATS ================= */}
 
@@ -214,7 +222,6 @@ function UserDashboard() {
 
           </div>
 
-
           <div className="dashboard-stat-card">
 
             <div className="stat-icon">
@@ -234,7 +241,6 @@ function UserDashboard() {
             </div>
 
           </div>
-
 
           <div className="dashboard-stat-card">
 
@@ -257,7 +263,6 @@ function UserDashboard() {
           </div>
 
         </section>
-
 
         {/* ================= UPCOMING BOOKING ================= */}
 
@@ -282,7 +287,6 @@ function UserDashboard() {
             </Link>
 
           </div>
-
 
           {loading ? (
 
@@ -329,7 +333,6 @@ function UserDashboard() {
                 <i className="bi bi-lightning-charge-fill"></i>
               </div>
 
-
               <div className="booking-main">
 
                 <div className="booking-title-row">
@@ -354,7 +357,6 @@ function UserDashboard() {
 
                 </div>
 
-
                 <div className="booking-details">
 
                   <div>
@@ -369,7 +371,6 @@ function UserDashboard() {
 
                   </div>
 
-
                   <div>
 
                     <span>
@@ -381,7 +382,6 @@ function UserDashboard() {
                     </strong>
 
                   </div>
-
 
                   <div>
 
@@ -405,7 +405,6 @@ function UserDashboard() {
 
         </section>
 
-
         {/* ================= QUICK ACTIONS ================= */}
 
         <section className="dashboard-section">
@@ -425,7 +424,6 @@ function UserDashboard() {
             </div>
 
           </div>
-
 
           <div className="quick-actions">
 
@@ -454,7 +452,6 @@ function UserDashboard() {
 
             </Link>
 
-
             <Link
               to="/my-bookings"
               className="quick-action-card"
@@ -479,7 +476,6 @@ function UserDashboard() {
               <i className="bi bi-arrow-right"></i>
 
             </Link>
-
 
             <Link
               to="/profile"
@@ -509,7 +505,6 @@ function UserDashboard() {
           </div>
 
         </section>
-
 
       </div>
 
