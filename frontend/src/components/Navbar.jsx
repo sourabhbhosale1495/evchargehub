@@ -78,13 +78,28 @@ function Navbar() {
             <li className="nav-item">
               <Link className="nav-link" to="/about">About</Link>
             </li>
+
+            {/* NAYA - Sirf Login hone pe dikhega */}
+            {user && (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link fw-bold text-success" to="/dashboard">
+                    <i className="bi bi-speedometer2 me-1"></i> Dashboard
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/my-bookings">
+                    My Bookings
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
 
-          {/* Right Side - YAHI CHANGE HAI */}
+          {/* Right Side */}
           <div className="d-flex align-items-center gap-2">
             {user ? (
               <>
-                {/* User chip - Good Vibe */}
                 <Link to="/dashboard" className="d-flex align-items-center gap-2 text-decoration-none me-1">
                   <div
                     className="d-flex align-items-center justify-content-center rounded-circle text-white fw-bold"
