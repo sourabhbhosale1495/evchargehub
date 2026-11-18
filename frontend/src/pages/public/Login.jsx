@@ -29,13 +29,16 @@ function Login() {
 
       const data = await loginUser({ email: email.trim(), password });
 
-      /*
+            /*
        * Save logged-in user
        */
       localStorage.setItem(
         "loggedInUser",
         JSON.stringify(data)
       );
+
+      // Navbar ko turant batayo user login ho gaya
+      window.dispatchEvent(new Event("userChanged"));
 
       /*
        * Check role
